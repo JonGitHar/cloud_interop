@@ -2,24 +2,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     labels:
-        name: node
-    name: node
+        name: api
+    name: api
 spec:
     replicas: 1
     selector:
         matchLabels:
-            app: node
-            service: node
+            app: api
+            service: api
     template:
         metadata:
             labels:
-                app: node
-                service: node
+                app: api
+                service: api
         spec:
             containers:
                 -
-                    name: node
+                    name: api
                     image: docker.io/mithunhr/appnode:latest
                     imagePullPolicy: IfNotPresent
                     ports:
-                    - containerPort: 3000
+                    - containerPort: 8080

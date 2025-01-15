@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     labels:
-        name: mong
-    name: mong
+        name: db
+    name: db
 spec:
     replicas: 1
     selector:
         matchLabels:
-            app: mong
-            service: mong
+            app: db
+            service: db
     template:
         metadata:
             labels:
-                app: mong
-                service: mong
+                app: db
+                service: db
         spec:
             containers:
                 -
-                    name: mong
+                    name: db
                     image: docker.io/mithunhr/dbmongo:latest
                     imagePullPolicy: IfNotPresent
                     ports:

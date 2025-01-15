@@ -3,14 +3,14 @@ kind: Service
 metadata:
   annotations:
   labels:
-    service: mong
-  name: mong
+    service: db
+  name: db
 spec:
   ports:
   - name: "27017"
     port: 27017
     targetPort: 27017
   selector:
-    service: mong
+    service: db
 status:
   loadBalancer: {}
